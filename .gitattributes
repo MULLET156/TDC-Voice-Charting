@@ -1,0 +1,5 @@
+# Keep files byte-for-byte the same on Windows and Linux (vendored core is checked by checksum).
+* text=auto eol=lf
+vendor/** -text
+*.cmd text eol=crlf
+*.png binary
