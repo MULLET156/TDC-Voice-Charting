@@ -1,0 +1,75 @@
+/* Voice Charting: layout only. Colours, fonts, buttons, rows and fields come
+   from the Dashboard's /shared/tdc.css (DESIGN.md); only --tdc-* variables here. */
+
+.tdc-dictate { margin: 16px 0 24px; }
+.tdc-dictate .tdc-groupby { margin-bottom: 12px; }
+.tdc-dictate-label { display: block; font-weight: 600; margin: 4px 0 6px; }
+
+/* The big dictation box: Wispr Flow types into it. */
+.tdc-dictation {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 38vh;
+  padding: 16px;
+  font: inherit;
+  font-size: 18px;
+  line-height: 1.5;
+  color: var(--tdc-ink);
+  background: var(--tdc-surface);
+  border: 2px solid var(--tdc-line);
+  border-radius: 10px;
+  resize: vertical;
+}
+.tdc-dictation:focus { outline: none; border-color: var(--tdc-accent); box-shadow: 0 0 0 3px var(--tdc-accent-soft); }
+.tdc-dictation::placeholder { color: var(--tdc-muted); }
+.tdc-dictate-hint { margin: 6px 0 12px; font-size: 14px; }
+
+.tdc-btn-big { min-height: 48px; padding-left: 28px; padding-right: 28px; font-size: 17px; }
+.tdc-btn-row [data-icon] { vertical-align: -3px; }
+
+.tdc-find button { flex: none; }
+
+/* Plan lines on the draft page */
+.tdc-line .tdc-row-main { min-width: 0; }
+.tdc-line-fields {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 10px;
+  margin-top: 8px;
+}
+.tdc-line-fields label { display: flex; flex-direction: column; gap: 4px; font-size: 12px; font-weight: 600; color: var(--tdc-muted); flex: 0 0 96px; }
+.tdc-line-fields label:first-child { flex-basis: 110px; }
+.tdc-line-fields .tdc-line-range { flex-basis: 160px; }
+.tdc-line-fields .tdc-line-range span { font-weight: 400; }
+.tdc-line-fields .tdc-line-pri { flex-basis: 150px; }
+.tdc-line-fields .tdc-line-note { flex: 1 1 220px; }
+.tdc-line-fields input, .tdc-line-fields select {
+  min-height: 40px; box-sizing: border-box; width: 100%;
+  padding: 6px 10px; font: inherit; font-size: 16px; color: var(--tdc-ink);
+  background: var(--tdc-sunk); border: 1px solid var(--tdc-line); border-radius: 8px;
+}
+.tdc-line-fields input:focus, .tdc-line-fields select:focus { outline: 2px solid var(--tdc-accent); outline-offset: 1px; }
+.tdc-problems { margin: 8px 0 0; padding-left: 20px; color: var(--tdc-alert); font-size: 14px; font-weight: 600; }
+
+.tdc-notetype { border: 1px solid var(--tdc-line); }
+.tdc-notetype legend { font-weight: 700; padding: 0 6px; }
+.tdc-notetype [data-show-for] { margin: 4px 0 12px 30px; }
+.tdc-notetype .tdc-check { display: flex; gap: 8px; align-items: center; min-height: 36px; }
+
+.tdc-draft-actions { margin-top: 16px; }
+.tdc-callout ul { margin: 6px 0 0; padding-left: 20px; }
+.tdc-dialog p { margin: 8px 0 16px; }
+
+@media (pointer: coarse) {
+  .tdc-line-fields input, .tdc-line-fields select { min-height: 44px; }
+  .tdc-notetype .tdc-check { min-height: 44px; }
+}
+@media (max-width: 640px) {
+  .tdc-dictation { min-height: 34vh; font-size: 17px; }
+  .tdc-line-fields label { flex: 1 1 40%; }
+  .tdc-line-fields .tdc-line-note, .tdc-line-fields .tdc-line-pri { flex: 1 1 100%; }
+  .tdc-line .tdc-row-act { align-self: flex-start; }
+  .tdc-draft-actions .tdc-btn { flex: 1 1 100%; }
+}
+@media print { .tdc-dictate, .tdc-draft-actions { display: none; } }

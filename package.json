@@ -1,0 +1,14 @@
+{
+  "name": "tdc-voice-charting",
+  "version": "0.1.0",
+  "description": "TDC Office module: dictate with Wispr Flow (or type), review a draft treatment plan or note, then Confirm to write it to Open Dental.",
+  "private": true,
+  "main": "server.js",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test",
+    "sync-core": "node scripts/sync-core.js"
+  },
+  "license": "UNLICENSED"
+}
